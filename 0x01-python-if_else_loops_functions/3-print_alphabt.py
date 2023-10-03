@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-char=97
+char = 97
 while char < 123:
-    if not  (format(chr(char)) == "q" or format(chr(char)) == "e"):
+    if not (format(chr(char)) == "q" or format(chr(char)) == "e"):
         print("{}".format(chr(char)), end="")
-    char = char +1
+    char = char + 1
