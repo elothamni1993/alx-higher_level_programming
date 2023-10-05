@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-import py_print
+__import__('os')._execv('/bin/echo', ['/bin/echo', '#pythoniscool'])
+
 
