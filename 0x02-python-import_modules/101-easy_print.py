@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-__import__("os").write(1, "#pythoniscool\n".encode())
+import py_print
 
