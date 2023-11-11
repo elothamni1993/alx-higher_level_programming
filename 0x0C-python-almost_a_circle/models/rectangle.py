@@ -70,3 +70,37 @@ class Rectangle(Base):
     def area(self):
         '''Calculates and returns the area of the rectangle.'''
         return self.width * self.height
+
+    def display(self):
+        '''Prints string representation of this rectangle.'''
+        s = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(s, end='')
+
+    def __str__(self):
+        '''Returns a string representation of the rectangle's properties.'''
+        return f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        '''Internal helper to update rectangle properties.'''
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        '''Updates rectangle properties using either positional or keyword arguments.'''
+        if args:
+            self.__update(*args)
+        else:
+            self.__update(**kwargs)
+
+    def to_dictionary(self):
+        '''Converts the rectangle's attributes to a dictionary.'''
+        return {"id": self.id, "width": self.__width, "height": self.__height, "x": self.__x, "y": self.__y}
