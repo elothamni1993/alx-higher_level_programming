@@ -58,3 +58,12 @@ class Rectangle(Base):
         self.validate_integer("y", value)
         self.__y = value
 
+    def validate_integer(self, name, value, eq=True):
+        '''Validates that a given attribute value is an integer and in the expected range.'''
+        if type(value) != int:
+            raise TypeError(f"{name} must be an integer")
+        if eq and value < 0:
+            raise ValueError(f"{name} must be >= 0")
+        elif not eq and value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
