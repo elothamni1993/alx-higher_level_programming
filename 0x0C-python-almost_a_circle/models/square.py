@@ -14,6 +14,7 @@ class Square(Rectangle):
         '''Returns string info about this square.'''
         return '[{}] ({}) {}/{} - {}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
         '''Size of this square.'''
@@ -23,6 +24,7 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
     def __update(self, id=None, size=None, x=None, y=None):
         '''Internal method that updates instance attributes via */**args.'''
         if id is not None:
